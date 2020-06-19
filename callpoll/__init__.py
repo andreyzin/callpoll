@@ -18,7 +18,7 @@ class CallPoll:
 			)
 		except:
 			return []
-			
+
 		if not response.text:
 			return []
 		
@@ -45,10 +45,3 @@ class CallPoll:
 				ev_id = event["event_id"]
 				self.send_response(ev_id = ev_id, response = self.routes[0](event["data"]))
 
-app = CallPoll("helloworld")
-
-@app.route
-def processing(event):
-	return "Hello"
-
-app.run()
